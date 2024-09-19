@@ -16,7 +16,7 @@ public class Member {
     private String zipCode;
 
     @OneToMany(mappedBy = "member")
-    private List<Order> orderList = new ArrayList<>();
+    private List<Order> orderList = new ArrayList<>(); // 권장하는 방식은 아님 . 참조를 통해 가져오는 것을 권장함.
 
     public Long getId() {
         return id;
