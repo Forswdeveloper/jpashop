@@ -1,9 +1,10 @@
 package jpabook.jpashop.domain;
 
 import jakarta.persistence.*;
+import jpabook.jpashop.comn.BaseEntity;
 
 @Entity
-public class Delivery {
+public class Delivery extends BaseEntity {
 
     @Id @GeneratedValue
     private Long id;
