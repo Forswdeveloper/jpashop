@@ -22,13 +22,22 @@ public class JpaMain {
         tx.begin();
 
         try{
-            Book book = new Book();
-            book.setName("JPA");
-            book.setAuthor("정동인");
 
-            em.persist(book);
-
+            Member member = new Member();
+            member.setName("Hello");
+            em.persist(member);
+            
+            em.flush();
+            em.clear();
+            
             //쿼리 실행 시점
+
+            Member findMember = em.find(Member.class, member.getId());
+            System.out.println("findMember.id = " + findMember.getId());
+            System.out.println("findMember.getName() = " + findMember.getName());
+
+            
+
             tx.commit();
         }catch (Exception e) {
             tx.rollback();

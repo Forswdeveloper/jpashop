@@ -1,0 +1,4 @@
+1. ManyToOne, OneToOne -> FetchType.LAZY로 변경
+2. 영속성 전이 설정.
+Order -> Delivery 영속성 전이 ALL 설정
+Order -> OrderItem 영속성 전이 ALL 설정
