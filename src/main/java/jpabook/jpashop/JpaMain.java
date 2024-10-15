@@ -4,10 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import jpabook.jpashop.domain.Book;
-import jpabook.jpashop.domain.Member;
-import jpabook.jpashop.domain.Order;
-import jpabook.jpashop.domain.OrderItem;
+import jpabook.jpashop.domain.*;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -25,7 +22,14 @@ public class JpaMain {
 
             Member member = new Member();
             member.setName("Hello");
+            member.setAddress(new Address("city","street","08888"));
             em.persist(member);
+
+
+            Book book = new Book();
+            book.setName("JPA");
+            book.setAuthor("정동인");
+            em.persist(book);
             
             em.flush();
             em.clear();
@@ -35,6 +39,7 @@ public class JpaMain {
             Member findMember = em.find(Member.class, member.getId());
             System.out.println("findMember.id = " + findMember.getId());
             System.out.println("findMember.getName() = " + findMember.getName());
+            System.out.println("findMember's get full address : " + findMember.getAddress().getFullAddress());
 
             
 

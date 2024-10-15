@@ -2,5 +2,3 @@
 2. 영속성 전이 설정.
 Order -> Delivery 영속성 전이 ALL 설정
 Order -> OrderItem 영속성 전이 ALL 설정
-
-Member,Delivery -> 값 임베디드 타입 설정
